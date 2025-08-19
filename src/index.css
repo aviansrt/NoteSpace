@@ -1,0 +1,208 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* подключение шрифта */
+@font-face {
+  font-family: 'Muli Light';
+  src: url('/public/muli_light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: 'Muli Light', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
+  color: #333;
+  line-height: 1.6;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding: 0 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+}
+
+.header-logo {
+  flex: 1; /* занимает доступное пространство слева */
+}
+
+.header-buttons {
+  display: flex;
+  height: 40px;
+  width: 222px;
+  margin: 0 -90px; /* отступ между кнопкой и переключателем */
+}
+
+.header-buttons button {
+  font-size: 16px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 20px;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: color 0.3s ease-in-out, transform 0.3s cubic-bezier(.4,2,.6,1);
+  font-weight: 600;
+}
+
+.header-buttons button:hover {
+  color: #1975ff;
+}
+
+.switch {
+  width: 75px;
+  height: 40px;
+  border-radius: 55px;
+  background-color: #e0e0e0;
+  overflow: hidden;
+}
+
+.theme {
+  margin: 3px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50px;
+  background-color: rgb(255, 255, 255);
+  transition: 0.5s ease-in-out;
+}
+
+.theme.light {
+  content: url('/public/icons/sun.png');
+}
+
+.switch:hover > .theme.light{
+  transform: rotate(45deg);
+}
+
+/* Main */
+
+.main-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+/* кнопка Create note */
+
+.main-button-container {
+  display: flex;
+  justify-content: center; 
+  margin: 30px 0; 
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.main-button {
+  width: 150px;
+  height: 45px;
+  background-color: #1975ff;
+  color: #fff;
+  border: none;
+  border-radius: 10px; /* скругление как у других кнопок */
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s cubic-bezier(.4,2,.6,1);
+}
+
+.main-button:hover {
+  background-color: #0066ff;
+  transform: translateY(-2px); /* эффект поднятия */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* списки */
+
+.idea {
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.shopping-list,
+.todo-list,
+.notes {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.shopping-list h3,
+.todo-list h3,
+.notes h3 {
+  margin-top: 0;
+  color: #333;
+  padding-bottom: 0px;
+}
+
+.shopping-list p,
+.todo-list p,
+.notes p {
+  margin: 10px 0;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* стили для списков */
+.shopping-list p::before,
+.todo-list p::before,
+.notes p::before {
+  content: "• ";
+  color: #0066ff;
+  font-weight: bold;
+}
+
+.app.dark {
+  background: #181a1b;
+  color: #f1f1f1;
+}
+
+.app.dark header {
+  background: #23272a;
+  border-bottom: 1px solid #333;
+}
+
+.app.dark .main-title {
+  color: #f1f1f1;
+}
+
+.app.dark .main-button {
+  background: #333;
+  color: #fff;
+}
+
+.app.dark .modal {
+  background: #23272a;
+  color: #f1f1f1;
+}
+
+.theme.dark {
+  background-color: #23272a;
+  content: url('/public/icons/moon.png'); /* если есть иконка луны */
+}
+
