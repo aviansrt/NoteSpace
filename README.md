@@ -1,2 +1,0 @@
-# NoteSpace
-Pet Project
